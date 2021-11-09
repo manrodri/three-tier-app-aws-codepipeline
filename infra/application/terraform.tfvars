@@ -1,22 +1,22 @@
 profile = "devops"
-region = "eu-west-2"
+region  = "us-east-1"
 
 subnet_count = {
   "development" = 2,
-  "staging" = 2,
-  "production" = 3
+  "staging"     = 2,
+  "production"  = 3
 }
 
 cidr_block = {
   "development" = "10.0.0.0/16",
-  "staging" = "10.1.0.0/16",
-  "production" = "10.2.0.0/16"
+  "staging"     = "10.1.0.0/16",
+  "production"  = "10.2.0.0/16"
 }
 
 public_subnets = {
   "development" = [
     "10.0.1.0/24",
-    "10.0.2.0/24"],
+  "10.0.2.0/24"],
   "production" = [
     "10.2.1.0/24",
     "10.2.2.0/24",
@@ -25,13 +25,13 @@ public_subnets = {
 
   "staging" = [
     "10.1.1.0/24",
-    "10.1.2.0/24"],
+  "10.1.2.0/24"],
 }
 
 private_subnets = {
   "development" = [
     "10.0.3.0/24",
-    "10.0.4.0/24"],
+  "10.0.4.0/24"],
   "production" = [
     "10.2.5.0/24",
     "10.2.4.0/24",
@@ -39,8 +39,31 @@ private_subnets = {
   ],
   "staging" = [
     "10.1.3.0/24",
-    "10.1.4.0/24"],
+  "10.1.4.0/24"],
 }
 
 
+#########
+# compute
+#########
 
+asg_instance_size = {
+  "development" = "t2.micro",
+  "staging"     = "t2.medium",
+  "production"  = "t2.medium"
+}
+
+
+asg_max_size = {
+  "development" = 3,
+  "staging"     = 6,
+  "production"  = 6
+}
+
+asg_min_size = {
+  "development" = 1,
+  "staging"     = 3,
+  "production"  = 3
+}
+
+key = "devops"
