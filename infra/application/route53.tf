@@ -5,7 +5,6 @@ resource "aws_route53_record" "cert_validation" {
   type            = tolist(aws_acm_certificate.myapp.domain_validation_options)[0].resource_record_type
   zone_id  = data.aws_route53_zone.public.id
   ttl      = 60
-  provider = aws.dns
 }
 
 
@@ -15,9 +14,8 @@ resource "aws_route53_record" "myapp" {
   name    = "${var.demo_dns_name}.${data.aws_route53_zone.public.name}"
   type    = "A"
   alias {
-    name                   = aws_alb.webapp_elb.dns_name
-    zone_id                = aws_alb.webapp_elb.zone_id
+    name                   = aws_alb.webapp_alb.dns_name
+    zone_id                = aws_alb.webapp_alb.zone_id
     evaluate_target_health = false
   }
-  provider = aws.dns
 }

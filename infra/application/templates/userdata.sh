@@ -10,6 +10,7 @@
 # BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations under the License.
 apt-get update
-apt-get install git ansible -y
-echo $greeting > /home/cloud_user/hello.txt
+echo hello > /tmp/hello.txt
+apt-get install git ansible nginx -y
+systemctl enable --now nginx
 

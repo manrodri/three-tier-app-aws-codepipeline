@@ -6,7 +6,7 @@ data "aws_availability_zones" "available" {}
 data "aws_route53_zone" "public" {
   name         = var.demo_dns_zone
   private_zone = false
-  provider     = aws.dns
+
 }
 
 
