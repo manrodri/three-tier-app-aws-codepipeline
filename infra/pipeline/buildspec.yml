@@ -16,8 +16,11 @@
 
 version: 0.2
 
-phases:
+env:
+    variables:
+      ENV: "development"
 
+phases:
   install:
     commands:
       -  apt-get update && apt-get install -y gnupg software-properties-common curl
@@ -29,6 +32,7 @@ phases:
       - pwd
       - ls
       - cd infra/application
+      - terraform workspace new ${ENV}
       - terraform init
 
   build:
