@@ -19,6 +19,8 @@ version: 0.2
 env:
     variables:
       ENV: "development"
+      DELETE: "false"
+
 
 phases:
   install:
@@ -33,12 +35,11 @@ phases:
       - ls
       - cd infra/application
       - terraform init -migrate-state
-      - terraform workspace select ${ENV}
 
 
   build:
     commands:
-      - terraform $TF_COMMAND -auto-approve
+      - sh ./script.sh
 
   post_build:
     commands:
