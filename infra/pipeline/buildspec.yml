@@ -28,7 +28,7 @@ phases:
     commands:
       - pwd
       - ls
-      - cd application
+      - cd infra/application
       - terraform init
 
   build:
