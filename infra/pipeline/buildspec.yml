@@ -33,7 +33,7 @@ phases:
       - ls
       - cd infra/application
       - terraform init -migrate-state
-      - terraform workspace new ${ENV}
+      - terraform workspace select ${ENV}
 
 
   build:
