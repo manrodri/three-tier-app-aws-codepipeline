@@ -7,6 +7,13 @@ terraform {
     }
   }
 
+  backend "s3" {
+    encrypt = true
+    bucket = "manrodri.com-terraform"
+    dynamodb_table = "fastAPICourse/pipeline/terraform.tfstate"
+    region = "eu-west-1"
+  }
+
 }
 
 provider "aws" {
