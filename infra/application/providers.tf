@@ -10,7 +10,8 @@ terraform {
   backend "s3" {
     encrypt = true
     bucket = "manrodri.com-terraform"
-    dynamodb_table = "fastAPICourse/pipeline/terraform.tfstate"
+    key = "fastAPICourse/pipeline/terraform.tfstate"
+    dynamodb_table = "terraform-state-lock-dynamo"
     region = "eu-west-1"
   }
 
