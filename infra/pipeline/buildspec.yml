@@ -19,7 +19,7 @@ version: 0.2
 env:
     variables:
       ENV: "development"
-      DELETE: "false"
+      DELETE: "true"
 
 
 phases:
