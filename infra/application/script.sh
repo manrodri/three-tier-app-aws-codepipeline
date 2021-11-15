@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-
+echo "delete variable is: ${DELETE}"
 if [${DELETE} == "true"]; then
   terraform destroy --auto-approve
   if [ $? == 0 ]; then
@@ -13,6 +13,6 @@ terraform workspace new ${ENV}
 if [ $? == 0 ]; then
   terraform ${TF_COMMAND} -auto-approve
 else
-  terraform select ${ENV}
+  terraform workspace select ${ENV}
   terraform ${TF_COMMAND} -auto-approve
 fi
