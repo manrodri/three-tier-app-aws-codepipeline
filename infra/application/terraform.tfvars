@@ -1,5 +1,5 @@
 profile = "devops"
-region = "us-east-1"
+region = "eu-west-1"
 
 subnet_count = {
   "development" = 2,
