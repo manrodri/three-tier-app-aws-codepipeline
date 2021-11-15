@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 echo "delete variable is: ${DELETE}"
-if [${DELETE} == "true"]; then
+if [ ${DELETE} == "true" ]; then
   terraform destroy --auto-approve
   if [ $? == 0 ]; then
     exit 0

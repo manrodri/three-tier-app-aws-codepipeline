@@ -21,7 +21,6 @@ env:
       ENV: "development"
       DELETE: "true"
 
-
 phases:
   install:
     commands:
