@@ -44,6 +44,11 @@ phases:
 
 artifacts:
   files:
-    - infra/application/infra.tfplan
+    - '**/*'
+  name: BuildArtifact
 
-  name: infraTfplan
+  secondary-artifacts:
+    infraTfplan:
+      files:
+        - infra/application/infra.tfplan
+      name: infraTfplan/$CODEBUILD_BUILD_NUMBER/infra.tfplan
