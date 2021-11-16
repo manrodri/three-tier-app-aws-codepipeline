@@ -46,4 +46,4 @@ artifacts:
   files:
     - infra/application/infra.tfplan
 
-  name: infra-tfplan
+  name: infraTfplan
