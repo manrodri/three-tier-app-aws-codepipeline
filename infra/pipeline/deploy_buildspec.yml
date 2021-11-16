@@ -19,6 +19,7 @@ version: 0.2
 env:
     variables:
       ENV: "development"
+      TF_COMMAND: apply
 #      DELETE: "true"
 
 phases:
