@@ -4,8 +4,8 @@ terraform workspace new ${ENV}
 retVal=$?
 if [ $retVal -ne 0 ]; then
     terraform workspace select ${ENV}
-    terraform ${TF_COMMAND} -out infra.tfplan
+    terraform plan -out infra.tfplan
 else
-  terraform ${TF_COMMAND} -auto-approve
+  terraform plan -auto-approve
 fi
 
