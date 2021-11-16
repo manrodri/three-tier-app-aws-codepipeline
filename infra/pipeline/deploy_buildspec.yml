@@ -31,6 +31,7 @@ phases:
       -  apt-get update && apt-get install terraform
   build:
     commands:
+      - cd infra/application
       - sh ./deploy_script.sh
 
   post_build:
