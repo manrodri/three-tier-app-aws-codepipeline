@@ -32,6 +32,6 @@ We are building an Python API in AWS cloud.
 
 #### Environment variables
 
-TF_COMMAND: apply
+TF_COMMAND: plan
 ENV: development
 

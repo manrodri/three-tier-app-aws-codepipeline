@@ -33,9 +33,10 @@ phases:
       - cd infra/application
       - terraform init -migrate-state
 
+
   build:
     commands:
-      - sh ./plan_script.sh
+      - sh ./deploy_script.sh
 
   post_build:
     commands:
