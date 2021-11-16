@@ -42,13 +42,4 @@ phases:
     commands:
       - echo terraform $TF_COMMAND completed on `date`
 
-artifacts:
-  files:
-    - '**/*'
-  name: BuildArtifact
 
-  secondary-artifacts:
-    infraTfplan:
-      files:
-        - infra/application/infra.tfplan
-      name: infraTfplan/$CODEBUILD_BUILD_NUMBER/infra.tfplan
