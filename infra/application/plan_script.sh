@@ -5,5 +5,5 @@ if [ $? -ne 0 ]; then
     terraform workspace select ${ENV}
 fi
   terraform validate
-  terraform plan -auto-approve
+  terraform plan -out infra.tfplan
 
