@@ -20,6 +20,12 @@ env:
     variables:
       ENV: "development"
       TF_COMMAND: apply
+      TF_INPUT: 0
+      TF_IN_AUTOMATION: true
+      TF_LOG: WARN
+
+
+
 #      DELETE: "true"
 
 phases:
