@@ -47,4 +47,6 @@ phases:
 artifacts:
   files:
     - 'infra/application/infra.tfplan'
+    - 'infra/application/deploy_build.yml'
+    - 'infra/application/deploy_script.sh'
   name: BuildArtifact
