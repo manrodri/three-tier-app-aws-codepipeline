@@ -18,12 +18,11 @@ version: 0.2
 
 env:
     variables:
-      ENV: "development"
+      ENV: "staging"
       TF_COMMAND: plan
       TF_INPUT: 0
       TF_IN_AUTOMATION: true
       TF_LOG: WARN
-      DELETE: "true"
 
 phases:
   install:
