@@ -1,4 +1,3 @@
-profile = "devops"
 region = "eu-west-1"
 
 subnet_count = {
@@ -11,7 +10,7 @@ subnet_count = {
 cidr_block = {
   "development" = "10.0.0.0/16",
    "no-ssl" = "10.0.0.0/16",
-  "staging" = "10.1.0.0/16",
+  "ç" = "10.1.0.0/16",
   "production" = "10.2.0.0/16"
 }
 
