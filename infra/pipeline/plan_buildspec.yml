@@ -46,5 +46,5 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
+    - 'infra/application/infra.tfplan'
   name: BuildArtifact
