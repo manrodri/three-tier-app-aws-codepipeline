@@ -1,6 +1,5 @@
-#!/usr/bin/env sh
-if $DELETE; then
-  echo "DELETE is: ${DELETE}"
+#!/bin/bash
+if [[ $DELETE == 'true' ]] ; then
   echo "Running ----> terraform destroy --auto-approve"
   terraform init -migrate-state
   terraform destroy --auto-approve
