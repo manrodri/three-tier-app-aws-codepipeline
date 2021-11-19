@@ -46,8 +46,6 @@ phases:
 
 artifacts:
   files:
-    - 'infra/application/*'
-    - 'infra/pipeline/deploy_buildspec.yml'
-    - 'infra/application/deploy_script.sh'
+    - '**/*'
 
   name: BuildArtifact
