@@ -34,7 +34,7 @@ phases:
   build:
     commands:
       - cd infra/application
-      - sh ./deploy_script.sh
+      - ./deploy_script.sh
 
   post_build:
     commands:
