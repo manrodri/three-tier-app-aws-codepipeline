@@ -1,5 +1,5 @@
 profile = "devops"
-region = "us-east-1"
+region = "eu-west-1"
 
 subnet_count = {
   "development" = 2,
@@ -78,4 +78,4 @@ asg_min_size = {
   "production" = 3
 }
 
-key = "devops"
+key = "test-key"
