@@ -1,0 +1,74 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "WafSID",
+        "Action": [
+            "waf:CreateIPSet",
+            "waf:CreateRule",
+            "waf:CreateRuleGroup",
+            "waf:CreateSqlInjectionMatchSet",
+            "waf:CreateWebACL",
+            "waf:DeleteIPSet",
+            "waf:DeleteLoggingConfiguration",
+            "waf:DeletePermissionPolicy",
+            "waf:DeleteRule",
+            "waf:DeleteRuleGroup",
+            "waf:DeleteSqlInjectionMatchSet",
+            "waf:DeleteWebACL",
+            "waf:GetChangeToken",
+            "waf:GetChangeTokenStatus",
+            "waf:GetGeoMatchSet",
+            "waf:GetIPSet",
+            "waf:GetLoggingConfiguration",
+            "waf:GetPermissionPolicy",
+            "waf:GetRule",
+            "waf:GetRuleGroup",
+            "waf:GetSampledRequests",
+            "waf:GetSqlInjectionMatchSet",
+            "waf:GetWebACL",
+            "waf:ListActivatedRulesInRuleGroup",
+            "waf:ListGeoMatchSets",
+            "waf:ListIPSets",
+            "waf:ListLoggingConfigurations",
+            "waf:ListRuleGroups",
+            "waf:ListRules",
+            "waf:ListSqlInjectionMatchSets",
+            "waf:ListSubscribedRuleGroups",
+            "waf:ListTagsForResource",
+            "waf:ListWebACLs",
+            "waf:PutLoggingConfiguration",
+            "waf:PutPermissionPolicy",
+            "waf:TagResource",
+            "waf:UntagResource",
+            "waf:UpdateIPSet",
+            "waf:UpdateRule",
+            "waf:UpdateRuleGroup",
+            "waf:UpdateSqlInjectionMatchSet",
+            "waf:UpdateWebACL"
+          ],
+        "Effect": "Allow",
+        "Resource": "*"
+      },
+      {
+        "Sid": "S3SID",
+        "Action": [
+          "s3:GetObject",
+          "s3:ListBucket",
+          "s3:PutObject"
+        ],
+        "Effect": "Allow",
+        "Resource": ""
+      },
+      {
+        "Sid": "DDBSID",
+        "Action": [
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:PutItem"
+        ],
+        "Effect": "Allow",
+        "Resource": ""
+      }
+    ]
+  }

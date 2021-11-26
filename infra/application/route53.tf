@@ -19,3 +19,4 @@ resource "aws_route53_record" "cert_validation" {
   zone_id  = data.aws_route53_zone.public.id
   ttl      = 60
 }
+
