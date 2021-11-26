@@ -26,16 +26,20 @@ resource "aws_alb" "webapp_alb" {
   ]
 }
 
-resource "aws_lb_listener" "front_end" {
+resource "aws_lb_listener" "front_end-ssl" {
   load_balancer_arn = aws_alb.webapp_alb.arn
-  port              = "80"
-  protocol          = "HTTP"
+  port              = "443"
+  protocol          = "HTTPS"
+  certificate_arn = aws_acm_certificate_validation.cert.certificate_arn
 
   default_action {
     type             = "forward"
     target_group_arn = aws_alb_target_group.webapp_alb_tg.arn
   }
 }
+
+
+
 
 resource "aws_alb_target_group" "webapp_alb_tg" {
   name = "${terraform.workspace}-demo-lb-target-group"
@@ -44,6 +48,23 @@ resource "aws_alb_target_group" "webapp_alb_tg" {
   vpc_id = module.vpc.vpc_id
   port = 80
 }
+
+# Always good practice to redirect http to https
+resource "aws_alb_listener" "webapp_elb_http" {
+  load_balancer_arn = aws_alb.webapp_alb.arn
+  port              = "80"
+  protocol          = "HTTP"
+  default_action {
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+}
+
+
 
 resource "aws_autoscaling_group" "webapp_asg" {
   lifecycle {

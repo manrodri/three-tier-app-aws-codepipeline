@@ -20,11 +20,5 @@ terraform {
 
 provider "aws" {
   region = var.region
-}
-
-
-provider "aws" {
-  //  certificate must be in us-east-1 to be used by cloudfront
-  alias   = "acm_provider"
-  region  = "us-east-1"
+  profile = var.profile
 }
