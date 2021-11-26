@@ -30,7 +30,7 @@ resource "aws_lb_listener" "front_end-ssl" {
   load_balancer_arn = aws_alb.webapp_alb.arn
   port              = "443"
   protocol          = "HTTPS"
-  certificate_arn = aws_acm_certificate.myapp.arn
+  certificate_arn = aws_acm_certificate_validation.cert.certificate_arn
 
   default_action {
     type             = "forward"

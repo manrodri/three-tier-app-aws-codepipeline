@@ -5,3 +5,7 @@ output "vpc_id" {
   description = "ID of project VPC"
   value       = module.vpc.vpc_id
 }
+
+output "certificate_arn" {
+  value = aws_acm_certificate.myapp.arn
+}
