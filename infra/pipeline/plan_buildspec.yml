@@ -34,7 +34,7 @@ phases:
   pre_build:
     commands:
       - cd infra/application
-      - terraform init --backend-config='fastAPICourse/pipeline/development'
+      - terraform init -reconfigure
 
   build:
     commands:
