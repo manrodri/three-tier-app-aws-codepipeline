@@ -1,0 +1,59 @@
+---
+
+-
+
+  # Hosts: where our play will run and options it will run with
+  hosts: linux
+
+  # Vars: variables that will apply to the play, on all target systems
+  vars_files:
+    - vars/logos.yaml
+
+  # Tasks: the list of tasks that will be executed within the play, this section
+  # can also be used for pre and post tasks
+  tasks:
+    - name: Install EPEL
+      yum:
+        name: epel-release
+        update_cache: yes
+        state: latest
+      when: ansible_distribution == 'CentOS'
+
+    - name: Install Nginx CentOS
+      yum:
+        name: nginx
+        update_cache: yes
+        state: latest
+      when: ansible_distribution == 'CentOS'
+
+    - name: Install Nginx Ubuntu
+      apt:
+        name: nginx
+        update_cache: yes
+        state: latest
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: Restart service nginx, in all servers
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+      notify: Check http service
+
+    - name: Template index.html-base.j2 to index.html on target
+      template:
+        src: index.html-ansible_managed.j2
+        dest: "{{ nginx_root_location }}/index.html"
+        mode: 0644
+
+
+  handlers:
+    - name: Check http service
+      uri:
+        url: http://{{ ansible_default_ipv4.address }}
+        status_code: 200
+
+
+  # Handlers: the list of handlers that are executed as a notify key from a task
+
+# Three dots indicate the end of a YAML document
+...

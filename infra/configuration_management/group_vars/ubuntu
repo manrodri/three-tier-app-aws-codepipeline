@@ -1,0 +1,3 @@
+---
+nginx_root_location: /var/www/html
+...
