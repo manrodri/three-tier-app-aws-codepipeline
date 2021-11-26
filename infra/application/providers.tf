@@ -14,13 +14,11 @@ terraform {
     workspace_key_prefix = "fastAPICourse/pipeline/development"
     dynamodb_table = "terraform-state-lock-dynamo"
     region = "eu-west-1"
-    profile = "devops"
   }
 
 }
 
 provider "aws" {
   region = var.region
-  profile = var.profile
 }
 
