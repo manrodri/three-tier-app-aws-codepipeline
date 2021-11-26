@@ -59,8 +59,8 @@ private_subnets = {
 asg_instance_size = {
   "development" = "t2.micro",
   "no-ssl": "t2.micro",
-  "staging" = "t2.medium",
-  "production" = "t2.medium"
+  "staging" = "t2.micro",
+  "production" = "t2.micro"
 }
 
 
