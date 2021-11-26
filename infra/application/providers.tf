@@ -11,7 +11,7 @@ terraform {
     encrypt = true
     bucket = "manrodri.com-terraform"
     key = "terraform.tfstate"
-
+    workspace_key_prefix = "fastAPICourse/pipeline/development"
     dynamodb_table = "terraform-state-lock-dynamo"
     region = "eu-west-1"
   }
