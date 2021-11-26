@@ -22,7 +22,7 @@ env:
       TF_COMMAND: plan
       TF_IN_AUTOMATION: true
       TF_LOG: WARN
-      BACKEND_PATH: fastAPICourse/pipeline/development
+      TF_INPUT: 0
 
 phases:
   install:
@@ -34,7 +34,7 @@ phases:
   pre_build:
     commands:
       - cd infra/application
-      - terraform init --backend-config='${BACKEND_PATH}'
+      - terraform init --migrate-state
 
   build:
     commands:
