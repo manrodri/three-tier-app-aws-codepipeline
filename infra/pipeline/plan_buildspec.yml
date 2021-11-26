@@ -20,7 +20,6 @@ env:
     variables:
       ENV: "staging"
       TF_COMMAND: plan
-      TF_INPUT: 0
       TF_IN_AUTOMATION: true
       TF_LOG: WARN
 
